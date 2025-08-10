@@ -10,7 +10,7 @@ import Foundation
 struct FolderModel: Identifiable {
     let id: UUID
     var name: String
-    var memos: [MemoModel]
+//    var memos: [MemoModel]
     
 }
 //struct Folder: Identifiable {

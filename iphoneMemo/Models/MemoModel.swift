@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MemoModel: {
-    
-    
-}
+//struct MemoModel: {
+//    
+//    
+//}
