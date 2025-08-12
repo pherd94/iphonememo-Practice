@@ -10,14 +10,19 @@ import SwiftUI
 struct FolderListView: View {
 
     var body: some View {
-        NavigationStack{
-            List{NavigationLink("빠른메모", value: Color.white )
-            }
-            .navigationTitle("폴더")
+        NavigationStack {
+            List { NavigationLink("빠른메모", value: Color.white) }
+                .navigationDestination(for: String.self) { string in
+                    if string == "빠른메모" { QuickMemoView() }
+                }
+                .navigationTitle("폴더")
+
         }
-        
+
     }
+
 }
+
 #Preview {
     FolderListView()
 }
