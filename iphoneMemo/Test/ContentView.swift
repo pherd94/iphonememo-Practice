@@ -7,25 +7,69 @@
 
 import SwiftUI
 
-let gradientColors:[Color] = [
-    .gradientTop,
-    .gradientBottom
-]
-
 struct ContentView: View {
+    @State private var numberOfDice: Int = 1
+
     var body: some View {
-        TabView {
-            WelcomePage()
-            FeaturesPage()
+
+        VStack {
+            Text("Dice Roller")
+                .font(.largeTitle.lowercaseSmallCaps())
+                .foregroundStyle(.white)
+
+            HStack {
+                ForEach(1...numberOfDice, id: \.description) { _ in
+                    DiceView()
+
+                }
+            }
+            HStack {
+                Button("Remove Dice", systemImage: "minus.circle.fill") {
+                    withAnimation {
+                        numberOfDice -= 1
+                    }
+                }
+                .disabled(numberOfDice == 1)
+
+                Button("Add Dice", systemImage: "plus.circle.fill") {
+                    withAnimation {
+                        numberOfDice += 1
+                    }
+                }
+                .disabled(numberOfDice == 5)
+
+            }
+            .padding()
+            .labelStyle(.iconOnly)
+            .font(.title)
+
         }
-        .background(Gradient(colors: gradientColors))
-        .tabViewStyle(.page)
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.appBackground)
+        .tint(.white)
     }
 }
 
 #Preview {
     ContentView()
 }
+
+//let gradientColors:[Color] = [
+//    .gradientTop,
+//    .gradientBottom
+//]
+//
+//struct ContentView: View {
+//    var body: some View {
+//        TabView {
+//            WelcomePage()
+//            FeaturesPage()
+//        }
+//        .background(Gradient(colors: gradientColors))
+//        .tabViewStyle(.page)
+//    }
+//}
 //struct ContentView: View {
 //    var body: some View {
 //        HStack {
