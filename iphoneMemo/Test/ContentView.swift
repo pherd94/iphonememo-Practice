@@ -4,10 +4,12 @@
 //
 //  Created by 10100 on 8/5/25.
 //
+//
 
 import SwiftUI
 
 struct ContentView: View {
+<<<<<<< HEAD
     @State private var numberOfDice: Int = 1
 
     var body: some View {
@@ -48,13 +50,58 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.appBackground)
         .tint(.white)
+=======
+    @State private var names: [String] = [
+        "Elisha", "Andre", "Jasmine", "Po-chun",
+    ]
+    @State private var nameToAdd = ""
+    @State private var pickedName = ""
+    @State private var shouldRemovePickedName = false
+    
+
+    var body: some View {
+        VStack {
+            Text(pickedName.isEmpty ? " " : pickedName)
+            
+            List {
+                ForEach(names, id: \.description) { name in
+                    Text(name)
+                }
+
+            }
+
+            TextField("Add Name", text: $nameToAdd)
+                .autocorrectionDisabled()
+                .onSubmit {
+                    if !nameToAdd.isEmpty {
+                        names.append(nameToAdd)
+                        nameToAdd = ""
+                    }
+                }
+            
+            Divider()
+            
+            Toggle("Remove when picked", isOn: $shouldRemovePickedName)
+            
+            Button("Pick Random Name") {
+                if let randomName = names.randomElement() {pickedName = randomName
+                } else {
+                    pickedName = ""
+                }
+            }
+        }
+        .padding()
+>>>>>>> ffaef62 (테스트뷰)
     }
 }
 
 #Preview {
     ContentView()
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ffaef62 (테스트뷰)
 //let gradientColors:[Color] = [
 //    .gradientTop,
 //    .gradientBottom
@@ -70,6 +117,13 @@ struct ContentView: View {
 //        .tabViewStyle(.page)
 //    }
 //}
+<<<<<<< HEAD
+=======
+//
+//#Preview {
+//    ContentView()
+//}
+>>>>>>> ffaef62 (테스트뷰)
 //struct ContentView: View {
 //    var body: some View {
 //        HStack {

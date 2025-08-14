@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+//뷰에서 다하게끔 하기 ,
