@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import SwiftData
 
-struct FolderModel: Identifiable {
-    let id: UUID
-    var name: String
+@Model
+class FolderModel {
+    var foldername: String
 //    var memos: [MemoModel]
     
+    init(foldername: String){
+        self.foldername = foldername
+    }
 }
 //struct Folder: Identifiable {
 //    let id: UUID

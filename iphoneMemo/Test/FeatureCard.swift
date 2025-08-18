@@ -1,44 +1,44 @@
+////
+////  FeatureCard.swift
+////  iphoneMemo
+////
+////  Created by 10100 on 8/12/25.
+////
 //
-//  FeatureCard.swift
-//  iphoneMemo
+//import SwiftUI
 //
-//  Created by 10100 on 8/12/25.
+//struct FeatureCard: View {
+//    let iconName: String
+//    let description: String
 //
-
-import SwiftUI
-
-struct FeatureCard: View {
-    let iconName: String
-    let description: String
-
-    var body: some View {
-        HStack {
-            Image(systemName: iconName)
-                .font(.largeTitle)
-                .frame(width: 50)
-                .padding(.trailing, 10)
-
-            Text(description)
-
-            Spacer()
-
-        }
-        .padding()
-        .background {
-            RoundedRectangle(cornerRadius: 12)
-                .foregroundStyle(.tint)
-                .opacity(0.25)
-                .brightness(-0.4)
-
-        }
-        .foregroundStyle(.white)
-    }
-}
-
-#Preview {
-    FeatureCard(
-        iconName: "person.2.crop.square.stack.fill",
-        description:
-            "A multiline description about a feature paired with the image on the left."
-    )
-}
+//    var body: some View {
+//        HStack {
+//            Image(systemName: iconName)
+//                .font(.largeTitle)
+//                .frame(width: 50)
+//                .padding(.trailing, 10)
+//
+//            Text(description)
+//
+//            Spacer()
+//
+//        }
+//        .padding()
+//        .background {
+//            RoundedRectangle(cornerRadius: 12)
+//                .foregroundStyle(.tint)
+//                .opacity(0.25)
+//                .brightness(-0.4)
+//
+//        }
+//        .foregroundStyle(.white)
+//    }
+//}
+//
+//#Preview {
+//    FeatureCard(
+//        iconName: "person.2.crop.square.stack.fill",
+//        description:
+//            "A multiline description about a feature paired with the image on the left."
+//    )
+//}

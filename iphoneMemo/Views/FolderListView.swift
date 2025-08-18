@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FolderListView: View {
-
+    @Query private var Folders : [FolderModel]
+    @Environment(\.modelContext) private var context
+    
     var body: some View {
         NavigationStack {
             List { NavigationLink("빠른메모", value: Color.white) }
@@ -16,7 +19,8 @@ struct FolderListView: View {
                     if string == "빠른메모" { QuickMemoView() }
                 }
                 .navigationTitle("폴더")
-
+            Button("",systemImage:"plus")
+            
         }
 
     }
